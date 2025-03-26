@@ -548,13 +548,17 @@ footer {
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
+  gap: 5rem; /* Increased gap significantly for more separation */
+  justify-content: space-around; /* Better distribution of space */
+  margin: 2.5rem 0;
   animation: fadeIn 2s ease-out;
+  width: 100%;
+  max-width: 700px; /* Increased max-width for better spacing */
+  position: relative; /* For absolute positioning context */
 }
 
 .btn {
-  padding: 12px 28px;
+  padding: 14px 32px; /* Slightly larger buttons */
   border-radius: 8px;
   font-weight: 500;
   font-size: 1rem;
@@ -563,6 +567,8 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 170px; /* Ensure consistent button width */
+  position: relative; /* For ::before/::after pseudo-elements */
 }
 
 .btn-primary {
@@ -572,6 +578,7 @@ footer {
   position: relative;
   overflow: hidden;
   z-index: 10;
+  margin-right: 2rem; /* Increased margin to push further left */
 }
 
 .btn-primary:hover {
@@ -584,6 +591,8 @@ footer {
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
   background-color: transparent;
+  margin-left: 2rem; /* Increased margin to push further right */
+  overflow: visible; /* Allow effects to extend beyond button */
 }
 
 .btn-outline:hover {
@@ -696,6 +705,11 @@ footer {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
+    gap: 2rem; /* Increased gap for mobile */
+  }
+  
+  .btn-primary, .btn-outline {
+    margin: 0; /* Remove side margins on mobile */
   }
 }
 
@@ -1025,6 +1039,126 @@ footer {
   font-weight: 400;
   animation: fadeIn 1s ease-out;
   letter-spacing: 0.02em;
+}
+
+/* ...existing code... */
+
+/* Ripple effect styles for About Me button */
+.ripple-effect {
+  opacity: 0.6; /* Increased opacity */
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  border-radius: 0;
+  background-color: transparent;
+  filter: blur(2px); /* Increased blur for smoother edges */
+  mix-blend-mode: screen; /* Creates a glowing effect */
+}
+
+.btn-outline.ripple-active {
+  transform: translateY(-1px);
+  box-shadow: 0 0 15px rgba(0, 163, 255, 0.5); /* Larger, brighter glow */
+  border-color: rgba(0, 163, 255, 0.9); /* More vibrant border */
+  color: #00A3FF;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.btn-outline.ripple-active::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 163, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 163, 255, 0.3); /* Added glow to the border */
+  z-index: -1;
+  opacity: 0.7;
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Enhanced pulse animation */
+@keyframes subtlePulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+/* ...existing code... */
+
+/* Ripple effect styles - enhanced for seamless integration */
+.ripple-effect {
+  opacity: 0; /* Start invisible for fade in */
+  pointer-events: none;
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth easing */
+  border-radius: 0;
+  background-color: transparent;
+  filter: blur(3px); /* Increased blur for softer edges */
+  mix-blend-mode: screen; /* Creates a glowing effect */
+  transform-origin: center center;
+  will-change: opacity; /* Optimize for smoother transitions */
+  position: fixed;
+  z-index: 5;
+}
+
+.btn-outline.ripple-active {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(0, 163, 255, 0.6); /* Larger, brighter glow */
+  border-color: rgba(0, 163, 255, 0.95); /* More vibrant border */
+  color: #00A3FF;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth easing */
+  z-index: 10;
+}
+
+.btn-outline.ripple-active::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 163, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 163, 255, 0.4), /* Outer glow */
+              inset 0 0 8px rgba(0, 163, 255, 0.2); /* Inner glow */
+  z-index: -1;
+  opacity: 0.7;
+  animation: enhancedPulse 4s ease-in-out infinite;
+}
+
+/* Enhanced pulse animation with more subtle transitions */
+@keyframes enhancedPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.98);
+    box-shadow: 0 0 15px rgba(0, 163, 255, 0.3);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(0, 163, 255, 0.5);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+    box-shadow: 0 0 15px rgba(0, 163, 255, 0.3);
+  }
+}
+
+/* Tweak the button positioning for better ripple alignment */
+.btn-outline {
+  /* ...existing code... */
+  overflow: visible; /* Allow effects to extend beyond button */
 }
 
 /* ...existing code... */
