@@ -482,6 +482,9 @@ footer {
   background-color: var(--color-primary);
   color: var(--color-bg);
   box-shadow: 0 4px 6px rgba(0, 255, 87, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .btn-primary:hover {
@@ -842,6 +845,76 @@ footer {
 }
 
 /* Responsive adjustments for project explorer */
+@media (max-width: 768px) {
+  .file-explorer-card {
+    max-width: 100%;
+  }
+  
+  .folder-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* Matrix button effect styles - more subtle */
+.matrix-effect {
+  opacity: 0.4; /* Reduced opacity */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border-radius: 0; /* Remove circular shape */
+  background-color: transparent; 
+  filter: blur(0.8px); /* Slightly more blur for subtlety */
+}
+
+.btn-primary.matrix-active {
+  transform: translateY(-1px); /* Less movement */
+  box-shadow: 0 0 10px rgba(0, 255, 87, 0.4); /* Much softer glow */
+  text-shadow: none; /* Remove text shadow for subtlety */
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+/* Replace spinning animation with a subtle pulse */
+.btn-primary.matrix-active::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 87, 0.3); /* Subtle border instead of gradient */
+  z-index: -1;
+  opacity: 0.5;
+  animation: subtlePulse 3s ease-in-out infinite; /* Slow, gentle pulse */
+}
+
+/* New subtle pulse animation */
+@keyframes subtlePulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+/* Remove the old spinning animation */
+@keyframes matrixBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .file-explorer-card {
     max-width: 100%;
