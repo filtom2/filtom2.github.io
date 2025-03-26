@@ -8,16 +8,17 @@
 /* Terminal Styles */
 .terminal-container {
   margin: 2rem 0;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  background-color: rgba(20, 20, 20, 0.95);
+  background-color: rgba(12, 12, 12, 0.95);
+  backdrop-filter: blur(5px);
   position: relative;
   z-index: 5;
 }
 
 .terminal-header {
-  background-color: #333;
+  background: linear-gradient(to right, #333, #222);
   padding: 8px 12px;
   display: flex;
   align-items: center;
@@ -146,7 +147,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 20px;
   position: relative;
   z-index: 2;
 }
@@ -324,3 +325,37 @@
 .project-card:nth-child(8) { animation-delay: 0.7s; }
 .project-card:nth-child(9) { animation-delay: 0.8s; }
 .project-card:nth-child(10) { animation-delay: 0.9s; }
+
+/* Terminal in Header */
+.header-terminal {
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  transform: translateY(10px);
+  animation: float 6s ease-in-out infinite;
+  border: 1px solid rgba(0, 255, 87, 0.15);
+}
+
+/* Adjust page header to accommodate terminal */
+.projects-page .page-header {
+  padding: 40px 0 80px;
+  background-color: var(--color-bg); /* Match main background color */
+  border-bottom: 1px solid var(--color-border); /* Subtle separator */
+  margin-bottom: 20px;
+}
+
+/* Animated floating effect for terminal */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  }
+}
