@@ -2,6 +2,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // Category filtering
   const categoryItems = document.querySelectorAll('.category-item');
   const projectCards = document.querySelectorAll('.project-card');
+  const promptCommand = document.querySelector('.prompt-command');
+  const cursor = document.querySelector('.prompt-cursor');
+  
+  // Function to simulate typing effect for the terminal command
+  function typeCommand(command) {
+    // Hide cursor during typing animation
+    cursor.style.display = 'none';
+    
+    // Clear current command
+    promptCommand.textContent = '';
+    
+    let i = 0;
+    const typeSpeed = 50; // ms per character
+    
+    function type() {
+      if (i < command.length) {
+        promptCommand.textContent += command.charAt(i);
+        i++;
+        setTimeout(type, typeSpeed);
+      } else {
+        // Show cursor again after typing is complete
+        cursor.style.display = 'block';
+      }
+    }
+    
+    type();
+  }
   
   categoryItems.forEach(item => {
     item.addEventListener('click', function() {
@@ -11,6 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Get selected category
       const category = this.getAttribute('data-category');
+      
+      // Update the terminal command based on selected category
+      const newCommand = (category === 'all') ? 
+        'ls -la' : 
+        `ls -la ${category}/`;
+      
+      // Animate the command change
+      typeCommand(newCommand);
       
       // Filter projects
       projectCards.forEach(card => {
@@ -37,9 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Terminal cursor blinking effect
-  const cursor = document.querySelector('.prompt-cursor');
   setInterval(() => {
-    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+    if (cursor.style.display !== 'none') { // Don't blink during typing animation
+      cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+    }
   }, 600);
   
   // Matrix background effect
