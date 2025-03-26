@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.vx = (Math.random() - 0.5) * 0.8;
         this.vy = (Math.random() - 0.5) * 0.8;
         this.radius = particleRadius;
-        this.color = 'rgba(16, 163, 127, 0.5)';
+        this.color = 'rgba(0, 255, 87, 0.5)'; // Updated to match the neon green color
       }
   
       draw() {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (distance < connectionDistance) {
             // Calculate opacity based on distance
             const opacity = 1 - (distance / connectionDistance);
-            ctx.strokeStyle = `rgba(16, 163, 127, ${opacity * 0.3})`;
+            ctx.strokeStyle = `rgba(0, 255, 87, ${opacity * 0.3})`; // Updated to match the neon green color
             ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (distance < mouse.radius) {
             // Calculate opacity based on distance
             const opacity = 1 - (distance / mouse.radius);
-            ctx.strokeStyle = `rgba(16, 163, 127, ${opacity * 0.6})`;
+            ctx.strokeStyle = `rgba(0, 255, 87, ${opacity * 0.6})`; // Updated to match the neon green color
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);

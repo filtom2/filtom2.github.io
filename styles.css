@@ -1,15 +1,16 @@
-/* Modern styling inspired by OpenAI's website */
+/* Modern styling inspired by benscott.dev dark theme */
 :root {
-  --color-bg: #ffffff;
-  --color-text: #191919;
-  --color-text-light: #5a5a5a;
-  --color-primary: #10a37f;
-  --color-secondary: #0a6e56;
-  --color-accent: #e8f7f3;
-  --color-border: #e5e5e5;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.03);
+  --color-bg: #0A0A0A;
+  --color-bg-secondary: #151515;
+  --color-text: #FFFFFF;
+  --color-text-light: #AAAAAA;
+  --color-primary: #00FF57;
+  --color-secondary: #00CC45;
+  --color-accent: rgba(0, 255, 87, 0.15);
+  --color-border: #252525;
+  --shadow-sm: 0 1px 2px rgba(0, 255, 87, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 255, 87, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 255, 87, 0.1);
 }
 
 * {
@@ -17,7 +18,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Mono', monospace;
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
@@ -64,14 +65,15 @@ body {
   align-items: center;
   margin-right: 12px;
   transition: color 0.2s ease;
+  color: var(--color-text);
 }
 
 .social-icon:hover {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .header-email {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Mono', monospace;
   font-weight: 500;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
@@ -114,7 +116,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 /* Active navigation link styling */
@@ -126,14 +128,15 @@ body {
 .btn-contact {
   padding: 8px 16px;
   border-radius: 4px;
-  background-color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
   color: var(--color-primary) !important;
   transition: all 0.2s ease;
+  border: 1px solid var(--color-primary);
 }
 
 .btn-contact:hover {
   background-color: var(--color-primary);
-  color: white !important;
+  color: var(--color-bg) !important;
 }
 
 /* Hero section with interactive graph background */
@@ -141,23 +144,8 @@ body {
   padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
-  background-color: #f8f9fa;
+  background-color: var(--color-bg);
 }
-
-/* Remove the old gradient background */
-/*
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(16, 163, 127, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
-  z-index: 0;
-}
-*/
 
 /* Canvas styling for graph background */
 #graph-background {
@@ -167,7 +155,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-color: #fafafa; /* Light background for subtle contrast */
+  background-color: var(--color-bg); /* Dark background */
   border: none; /* Remove any border */
 }
 
@@ -185,10 +173,7 @@ body {
   margin-bottom: 24px;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  background: linear-gradient(90deg, var(--color-text) 0%, var(--color-primary) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text);
 }
 
 .subtitle {
@@ -235,7 +220,7 @@ section h2::after {
 
 /* Card styling */
 .content-card {
-  background-color: white;
+  background-color: var(--color-bg-secondary);
   border-radius: 12px;
   padding: 32px;
   box-shadow: var(--shadow-md);
@@ -262,7 +247,7 @@ section h2::after {
   left: 0;
   margin: -1px;
   border-radius: inherit;
-  background: linear-gradient(to right, var(--color-primary), #6b8afd);
+  background: linear-gradient(to right, var(--color-primary), #4aff91);
   z-index: -1;
 }
 
@@ -274,7 +259,7 @@ section h2::after {
 }
 
 .skill-card {
-  background-color: white;
+  background-color: var(--color-bg-secondary);
   border-radius: 10px;
   padding: 24px;
   box-shadow: var(--shadow-sm);
@@ -305,7 +290,7 @@ section h2::after {
 footer {
   padding: 40px 0;
   border-top: 1px solid var(--color-border);
-  background-color: #fafafa;
+  background-color: var(--color-bg);
 }
 
 .footer-content {
@@ -381,13 +366,13 @@ footer {
 .header-text {
   font-size: 14px;
   font-weight: 400;
-  color: #333;
+  color: var(--color-text);
   text-decoration: none;
   margin: 2px 0;
 }
 
 .header-text:hover {
-  color: #0066cc;
+  color: var(--color-primary);
 }
 
 .header-contact {
@@ -397,7 +382,7 @@ footer {
 
 /* Page header for inner pages like About */
 .page-header {
-  background-color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
   padding: 60px 0 40px;
   margin-bottom: 40px;
 }
@@ -415,7 +400,7 @@ footer {
 }
 
 .navbar.transparent {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -430,8 +415,8 @@ footer {
   position: relative;
   padding: 0;
   margin: 0;
-  position: relative; /* Important for absolute positioning of canvas */
-  overflow: hidden; /* Ensure canvas doesn't cause scrollbars */
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-center-content {
@@ -453,10 +438,7 @@ footer {
   font-weight: 800;
   margin-bottom: 0.5rem;
   letter-spacing: -0.04em;
-  background: linear-gradient(45deg, var(--color-primary), #6b8afd);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text);
   animation: fadeInUp 1s ease-out;
 }
 
@@ -467,7 +449,7 @@ footer {
 }
 
 .typewriter-text {
-  color: var(--color-text-light);
+  color: var(--color-primary);
   font-size: 1.5rem;
   font-weight: 400;
   position: relative;
@@ -498,14 +480,14 @@ footer {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: white;
-  box-shadow: 0 4px 6px rgba(16, 163, 127, 0.2);
+  color: var(--color-bg);
+  box-shadow: 0 4px 6px rgba(0, 255, 87, 0.2);
 }
 
 .btn-primary:hover {
   background-color: var(--color-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(16, 163, 127, 0.25);
+  box-shadow: 0 6px 12px rgba(0, 255, 87, 0.25);
 }
 
 .btn-outline {
@@ -565,7 +547,7 @@ footer {
 .minimal-footer {
   padding: 20px 0;
   background-color: transparent;
-  border-top: 1px solid rgba(229, 229, 229, 0.5);
+  border-top: 1px solid rgba(37, 37, 37, 0.5);
 }
 
 /* Animations */
@@ -635,5 +617,237 @@ footer {
   .hero-indicators {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+/* File System Explorer Styles */
+.file-explorer {
+  font-family: 'Space Mono', monospace;
+  padding: 10px 0;
+}
+
+.folder-item, .file-item {
+  margin: 4px 0;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.folder-header:hover {
+  background-color: var(--color-accent);
+}
+
+.folder-icon, .folder-icon-open {
+  color: var(--color-primary);
+  margin-right: 10px;
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.folder-name {
+  flex-grow: 1;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.folder-arrow {
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.folder-header.open .folder-arrow {
+  transform: rotate(90deg);
+}
+
+.folder-content {
+  padding-left: 24px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.folder-content.open {
+  max-height: 1000px; /* Adjust as needed */
+}
+
+.nested {
+  border-left: 2px solid var(--color-border);
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.file-item:hover {
+  background-color: var(--color-accent);
+}
+
+.file-item i {
+  color: var(--color-text-light);
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Different file type icons */
+.fa-file-code {
+  color: var(--color-primary);
+}
+
+.fa-file-alt {
+  color: #AAAAAA;
+}
+
+.fa-file-image {
+  color: #4aff91;
+}
+
+/* Project Explorer Page Specific Styles */
+.projects-page .section-heading {
+  text-align: left;
+}
+
+.left-aligned-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.file-explorer-card {
+  width: 100%;
+  max-width: 800px;
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+/* Contemporary File System Explorer Styles with edged font */
+.file-explorer {
+  font-family: 'Space Mono', monospace;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.folder-item, .file-item {
+  margin: 6px 0;
+  transition: all 0.2s ease;
+  border-radius: 2px; /* More angular corners */
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 2px; /* More angular corners */
+  transition: background-color 0.2s ease;
+}
+
+.folder-header:hover {
+  background-color: var(--color-accent);
+}
+
+.folder-icon, .folder-icon-open {
+  color: var(--color-primary);
+  margin-right: 10px;
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.folder-name {
+  flex-grow: 1;
+  font-weight: 500;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.folder-arrow {
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.folder-header.open .folder-arrow {
+  transform: rotate(90deg);
+}
+
+.folder-content {
+  padding-left: 24px;
+  overflow: hidden;
+  display: none;
+}
+
+.folder-content.open {
+  display: block;
+}
+
+.nested {
+  border-left: 2px solid var(--color-border);
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.file-item:hover {
+  background-color: var(--color-accent);
+}
+
+.file-item i {
+  color: var(--color-primary);
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Section heading for projects page */
+.projects-page section h2 {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+}
+
+/* More edged page header for project explorer */
+.projects-page .page-header h1 {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive adjustments for project explorer */
+@media (max-width: 768px) {
+  .file-explorer-card {
+    max-width: 100%;
+  }
+  
+  .folder-name {
+    font-size: 0.8rem;
   }
 }
