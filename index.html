@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Milan Šeliga | Computer Science Student</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Load the modern Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Changed to JetBrains Mono font -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
@@ -18,31 +18,14 @@
   </script>
 </head>
 <body class="home-page">
-  <nav class="navbar transparent">
-    <div class="container">
-      <div class="header-info">
-        <div class="header-contact">
-          <a href="https://github.com/filtom2" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-          <div class="header-stack">
-            <a href="mailto:milanoseptuno@gmail.com" class="header-text">milanoseptuno@gmail.com</a>
-            <span class="header-text">Milan Šeliga</span>
-          </div>
-        </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="mailto:milan.seliga@stuba.sk" class="btn-contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navbar has been removed -->
 
   <div class="fullscreen-hero">
     <!-- Canvas without debug border -->
     <canvas id="graph-background"></canvas>
     <div class="hero-center-content">
       <div class="animated-text-container">
+        <span class="hero-intro">Hello, I am</span>
         <h1 class="hero-name">Milan Šeliga</h1>
         <div class="typewriter">
           <span class="typewriter-text">Computer Science Student</span>
@@ -67,15 +50,24 @@
         </div>
       </div>
     </div>
-    <!-- Scroll indicator removed -->
   </div>
 
-  <footer class="minimal-footer">
+  <footer class="minimal-footer home-footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2025 Milan Šeliga</p>
+        <div class="footer-info">
+          <div class="footer-contact">
+            <a href="https://github.com/filtom2" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+            <div class="footer-stack">
+              <a href="mailto:milanoseptuno@gmail.com" class="footer-text">milanoseptuno@gmail.com</a>
+              <span class="footer-text">Milan Šeliga</span>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">&copy; 2025</p>
         <div class="footer-links">
-          <a href="https://github.com/filtom2" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="projects.html" class="nav-link">Projects</a>
         </div>
       </div>
     </div>

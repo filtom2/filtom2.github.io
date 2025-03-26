@@ -1,4 +1,4 @@
-/* Modern styling inspired by benscott.dev dark theme */
+/* Modern styling with JetBrains Mono as the primary font */
 :root {
   --color-bg: #0A0A0A;
   --color-bg-secondary: #151515;
@@ -11,6 +11,7 @@
   --shadow-sm: 0 1px 2px rgba(0, 255, 87, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 255, 87, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 255, 87, 0.1);
+  --font-primary: 'JetBrains Mono', monospace;
 }
 
 * {
@@ -18,7 +19,7 @@
 }
 
 body {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
@@ -26,6 +27,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-size: 16px;
+  letter-spacing: -0.01em; /* JetBrains Mono looks better with slightly tighter letter spacing */
 }
 
 .container {
@@ -73,10 +75,10 @@ body {
 }
 
 .header-email {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   font-weight: 500;
   font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   color: var(--color-text-light);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -314,6 +316,91 @@ footer {
 
 .social-link:hover {
   color: var(--color-primary);
+}
+
+/* Enhanced footer for home page without navbar */
+.home-footer {
+  padding: 25px 0;
+  background-color: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(70, 70, 70, 0.3);
+}
+
+.home-footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+}
+
+.footer-stack {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.footer-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  text-decoration: none;
+  margin: 2px 0;
+  transition: color 0.2s ease;
+}
+
+.footer-text:hover {
+  color: var(--color-primary);
+}
+
+.home-footer .copyright {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.home-footer .footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Responsive adjustments for enhanced footer */
+@media (max-width: 768px) {
+  .home-footer .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-info {
+    align-items: center;
+  }
+
+  .home-footer .copyright {
+    order: 3;
+  }
 }
 
 /* Responsive styles */
@@ -625,7 +712,7 @@ footer {
 
 /* File System Explorer Styles */
 .file-explorer {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   padding: 10px 0;
 }
 
@@ -660,6 +747,9 @@ footer {
   flex-grow: 1;
   font-weight: 500;
   color: var(--color-text);
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .folder-arrow {
@@ -739,9 +829,9 @@ footer {
   margin-left: 0;
 }
 
-/* Contemporary File System Explorer Styles with edged font */
+/* Contemporary File System Explorer Styles with JetBrains Mono */
 .file-explorer {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   padding: 10px 0;
   width: 100%;
 }
@@ -766,7 +856,7 @@ footer {
 }
 
 .folder-icon, .folder-icon-open {
-  color: var(--color-primary);
+  color: var (--color-primary);
   margin-right: 10px;
   font-size: 1rem;
   width: 20px;
@@ -778,7 +868,7 @@ footer {
   font-weight: 500;
   color: var(--color-text);
   font-size: 0.85rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -831,17 +921,17 @@ footer {
 
 /* Section heading for projects page */
 .projects-page section h2 {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   font-size: 1.5rem;
 }
 
 /* More edged page header for project explorer */
 .projects-page .page-header h1 {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-primary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 /* Responsive adjustments for project explorer */
@@ -924,3 +1014,17 @@ footer {
     font-size: 0.8rem;
   }
 }
+
+/* ...existing code... */
+
+.hero-intro {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  animation: fadeIn 1s ease-out;
+  letter-spacing: 0.02em;
+}
+
+/* ...existing code... */

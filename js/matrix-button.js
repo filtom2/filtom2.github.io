@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // More subtle green for characters
       matrixCtx.fillStyle = 'rgba(0, 255, 87, 0.3)'; // Much more transparent characters
-      matrixCtx.font = `${fontSize}px "Space Mono", monospace`;
+      matrixCtx.font = `${fontSize}px "JetBrains Mono", monospace`; // Changed to JetBrains Mono
       matrixCtx.textAlign = 'center';
       
       // Draw characters

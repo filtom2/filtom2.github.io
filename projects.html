@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>Projects | Milan Šeliga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Load fonts - adding Space Mono for more edged appearance -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Changed to JetBrains Mono font -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/projects.css">
 </head>
 <body class="projects-page">
   <nav class="navbar">
@@ -38,148 +39,277 @@
   </header>
 
   <main>
-    <div class="container left-aligned-container">
-      <section class="file-system">
-        <div class="section-heading">
-          <h2>Project Explorer</h2>
+    <div class="container">
+      <!-- Terminal Prompt -->
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="terminal-btn red"></span>
+          <span class="terminal-btn yellow"></span>
+          <span class="terminal-btn green"></span>
+          <span class="terminal-title">project-explorer</span>
         </div>
-        <div class="content-card file-explorer-card">
-          <div class="file-explorer">
-            <!-- School Projects Folder -->
-            <div class="folder-item">
-              <div class="folder-header">
-                <i class="folder-icon fas fa-folder"></i>
-                <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                <span class="folder-name">School Projects</span>
-                <i class="fas fa-chevron-right folder-arrow"></i>
-              </div>
-              <div class="folder-content" style="display: none;">
-                <!-- PKS Course -->
-                <div class="folder-item nested">
-                  <div class="folder-header">
-                    <i class="folder-icon fas fa-folder"></i>
-                    <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                    <span class="folder-name">PKS (Computer Networks)</span>
-                    <i class="fas fa-chevron-right folder-arrow"></i>
-                  </div>
-                  <div class="folder-content" style="display: none;">
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Network Protocol Implementation</span>
-                    </div>
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Packet Analyzer</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- PSIP Course -->
-                <div class="folder-item nested">
-                  <div class="folder-header">
-                    <i class="folder-icon fas fa-folder"></i>
-                    <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                    <span class="folder-name">PSIP (Network Programming)</span>
-                    <i class="fas fa-chevron-right folder-arrow"></i>
-                  </div>
-                  <div class="folder-content" style="display: none;">
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Socket Programming</span>
-                    </div>
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>HTTP Server Implementation</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- DSA Course -->
-                <div class="folder-item nested">
-                  <div class="folder-header">
-                    <i class="folder-icon fas fa-folder"></i>
-                    <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                    <span class="folder-name">DSA (Data Structures & Algorithms)</span>
-                    <i class="fas fa-chevron-right folder-arrow"></i>
-                  </div>
-                  <div class="folder-content" style="display: none;">
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Sorting Algorithms</span>
-                    </div>
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Graph Algorithms</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hobby Projects Folder -->
-            <div class="folder-item">
-              <div class="folder-header">
-                <i class="folder-icon fas fa-folder"></i>
-                <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                <span class="folder-name">Hobby Projects</span>
-                <i class="fas fa-chevron-right folder-arrow"></i>
-              </div>
-              <div class="folder-content" style="display: none;">
-                <div class="folder-item nested">
-                  <div class="folder-header">
-                    <i class="folder-icon fas fa-folder"></i>
-                    <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                    <span class="folder-name">Web Development</span>
-                    <i class="fas fa-chevron-right folder-arrow"></i>
-                  </div>
-                  <div class="folder-content" style="display: none;">
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Personal Portfolio Website</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="folder-item nested">
-                  <div class="folder-header">
-                    <i class="folder-icon fas fa-folder"></i>
-                    <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                    <span class="folder-name">Python Projects</span>
-                    <i class="fas fa-chevron-right folder-arrow"></i>
-                  </div>
-                  <div class="folder-content" style="display: none;">
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Data Analysis Scripts</span>
-                    </div>
-                    <div class="file-item">
-                      <i class="fas fa-file-code"></i>
-                      <span>Automation Tools</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Research Projects Folder -->
-            <div class="folder-item">
-              <div class="folder-header">
-                <i class="folder-icon fas fa-folder"></i>
-                <i class="folder-icon-open fas fa-folder-open" style="display: none;"></i>
-                <span class="folder-name">Research Projects</span>
-                <i class="fas fa-chevron-right folder-arrow"></i>
-              </div>
-              <div class="folder-content" style="display: none;">
-                <div class="file-item">
-                  <i class="fas fa-file-alt"></i>
-                  <span>AI Algorithm Research</span>
-                </div>
-                <div class="file-item">
-                  <i class="fas fa-file-alt"></i>
-                  <span>Network Security Analysis</span>
-                </div>
+        <div class="terminal-body">
+          <div class="terminal-prompt">
+            <span class="prompt-user">milan@portfolio</span>
+            <span class="prompt-separator">:</span>
+            <span class="prompt-path">~/projects</span>
+            <span class="prompt-dollar">$</span>
+            <span class="prompt-command">ls -la</span>
+            <span class="prompt-cursor"></span>
+          </div>
+          <div class="category-list">
+            <div class="terminal-output">
+              <div class="terminal-line">
+                <span class="category-item active" data-category="all">all</span>
+                <span class="category-item" data-category="school">school</span>
+                <span class="category-item" data-category="web">web-dev</span>
+                <span class="category-item" data-category="python">python</span>
+                <span class="category-item" data-category="research">research</span>
+                <span class="category-item" data-category="network">network</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="project-grid">
+        <!-- School Projects -->
+        <div class="project-card" data-categories="school network">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Network Protocol Implementation</h3>
+              <div class="card-tags">
+                <span class="tag">PKS</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <p>Custom implementation of network protocols with packet analysis features.</p>
+            <div class="card-footer">
+              <span class="card-date">2024</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+                <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="school network">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Packet Analyzer</h3>
+              <div class="card-tags">
+                <span class="tag">PKS</span>
+                <span class="tag">C++</span>
+              </div>
+            </div>
+            <p>Tool for analyzing network traffic and detecting patterns in packet streams.</p>
+            <div class="card-footer">
+              <span class="card-date">2023</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+                <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="school network">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Socket Programming</h3>
+              <div class="card-tags">
+                <span class="tag">PSIP</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <p>Implementation of network sockets for real-time communication between systems.</p>
+            <div class="card-footer">
+              <span class="card-date">2023</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="school network">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>HTTP Server Implementation</h3>
+              <div class="card-tags">
+                <span class="tag">PSIP</span>
+                <span class="tag">Java</span>
+              </div>
+            </div>
+            <p>A custom HTTP server built from scratch with support for REST endpoints.</p>
+            <div class="card-footer">
+              <span class="card-date">2023</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+                <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="school">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Sorting Algorithms</h3>
+              <div class="card-tags">
+                <span class="tag">DSA</span>
+                <span class="tag">Java</span>
+              </div>
+            </div>
+            <p>Implementation and visualization of different sorting algorithms with complexity analysis.</p>
+            <div class="card-footer">
+              <span class="card-date">2022</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="school">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Graph Algorithms</h3>
+              <div class="card-tags">
+                <span class="tag">DSA</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <p>Implementation of graph traversal and shortest path algorithms with interactive demo.</p>
+            <div class="card-footer">
+              <span class="card-date">2022</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Web Projects -->
+        <div class="project-card" data-categories="web">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Personal Portfolio Website</h3>
+              <div class="card-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <p>This website - a modern, matrix-inspired developer portfolio with interactive elements.</p>
+            <div class="card-footer">
+              <span class="card-date">2024</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+                <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Python Projects -->
+        <div class="project-card" data-categories="python">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Data Analysis Scripts</h3>
+              <div class="card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Data</span>
+              </div>
+            </div>
+            <p>Collection of data analysis utilities for processing and visualizing large datasets.</p>
+            <div class="card-footer">
+              <span class="card-date">2023</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="python">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Automation Tools</h3>
+              <div class="card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Automation</span>
+              </div>
+            </div>
+            <p>Scripts for automating repetitive tasks and enhancing workflow productivity.</p>
+            <div class="card-footer">
+              <span class="card-date">2023</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Research Projects -->
+        <div class="project-card" data-categories="research">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>AI Algorithm Research</h3>
+              <div class="card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">AI</span>
+                <span class="tag">Research</span>
+              </div>
+            </div>
+            <p>Research on optimization techniques for machine learning algorithms in resource-constrained environments.</p>
+            <div class="card-footer">
+              <span class="card-date">2024</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-file-alt"></i></a>
+                <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card" data-categories="research network">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3>Network Security Analysis</h3>
+              <div class="card-tags">
+                <span class="tag">Security</span>
+                <span class="tag">Python</span>
+                <span class="tag">Research</span>
+              </div>
+            </div>
+            <p>Comprehensive analysis of network security vulnerabilities and mitigation strategies.</p>
+            <div class="card-footer">
+              <span class="card-date">2023</span>
+              <div class="card-links">
+                <a href="#" class="card-link"><i class="fas fa-file-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matrix Canvas Background -->
+      <canvas id="matrix-background" class="project-matrix-bg"></canvas>
     </div>
   </main>
 
@@ -194,7 +324,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for folder collapsing functionality -->
-  <script src="js/file-explorer.js"></script>
+  <!-- JavaScript for projects page functionality -->
+  <script src="js/projects.js"></script>
 </body>
 </html>
