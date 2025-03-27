@@ -1,0 +1,54 @@
+/* Matrix Blue Theme for About Page */
+.about-page {
+  --color-primary: #00A3FF; /* Matrix blue instead of green */
+  --color-secondary: #0081cc; /* Darker blue for secondary elements */
+  --color-accent: rgba(0, 163, 255, 0.15); /* Subtle blue accent */
+}
+
+/* Override specific elements on the about page */
+.about-page .navbar {
+  border-bottom-color: rgba(0, 163, 255, 0.3);
+}
+
+.about-page .btn-contact {
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary);
+}
+
+.about-page .btn-contact:hover {
+  background-color: var(--color-primary);
+}
+
+.about-page .page-header h1 {
+  color: var(--color-primary);
+}
+
+.about-page section h2::after {
+  background-color: var(--color-primary);
+}
+
+.about-page .skill-card:hover {
+  border-color: var(--color-primary);
+}
+
+.about-page .skill-card h3 {
+  color: var(--color-primary);
+}
+
+.about-page .nav-links li a:hover,
+.about-page .nav-links li a.active,
+.about-page .social-icon:hover,
+.about-page .header-email:hover,
+.about-page .social-link:hover {
+  color: var(--color-primary);
+}
+
+/* Add a subtle blue glow to cards on hover */
+.about-page .skill-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 163, 255, 0.2);
+}
+
+/* Blue gradient for the border elements */
+.about-page .gradient-border::before {
+  background: linear-gradient(to right, var(--color-primary), #66c7ff);
+}
