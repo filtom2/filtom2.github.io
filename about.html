@@ -4,21 +4,39 @@
   <meta charset="UTF-8">
   <title>About | Milan Šeliga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Changed to JetBrains Mono font -->
+  <meta name="description" content="About Milan Šeliga: computer science student, skills in Python, networking, web development, data and AI.">
+  <meta name="author" content="Milan Šeliga">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://filtom2.github.io/about.html">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Milan Šeliga">
+  <meta property="og:title" content="About | Milan Šeliga">
+  <meta property="og:description" content="Computer science student exploring AI, data science and custom protocol development.">
+  <meta property="og:url" content="https://filtom2.github.io/about.html">
+  <meta property="og:image" content="https://filtom2.github.io/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Matrix Blue Theme -->
   <link rel="stylesheet" href="css/about-blue.css">
-  <!-- Removed Game of Life CSS files -->
 </head>
 <body class="about-page">
-  <nav class="navbar">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav class="navbar" aria-label="Main">
     <div class="container">
       <div class="header-info">
         <div class="header-contact">
-          <a href="https://github.com/filtom2" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/filtom2" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
           <div class="header-stack">
             <a href="mailto:milanoseptuno@gmail.com" class="header-text">milanoseptuno@gmail.com</a>
             <span class="header-text">Milan Šeliga</span>
@@ -27,14 +45,12 @@
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="mailto:milan.seliga@stuba.sk" class="btn-contact">Contact</a></li>
       </ul>
     </div>
   </nav>
-
-  <!-- Removed Game of Life canvas elements -->
 
   <header class="page-header">
     <div class="container">
@@ -42,7 +58,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
       <section class="intro">
         <div class="section-heading">
@@ -61,7 +77,6 @@
           <h2>Current Skills</h2>
         </div>
         <div class="skills-grid">
-          <!-- Removed data attributes from skill cards -->
           <div class="skill-card">
             <h3>Python</h3>
             <p>Pandas, NumPy, Socket Programming</p>
@@ -96,22 +111,20 @@
           </p>
         </div>
       </section>
-      
-      <!-- Removed Timeline Section with Game of Life Evolution -->
     </div>
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2025 Milan Šeliga</p>
+        <p>&copy; <span data-year>2026</span> Milan Šeliga</p>
         <div class="footer-links">
-          <a href="https://github.com/filtom2" class="social-link">GitHub</a>
+          <a href="https://github.com/filtom2" class="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Removed Game of Life script references -->
+  <script src="js/site.js"></script>
 </body>
 </html>

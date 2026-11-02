@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("Matrix button script loaded");
   const projectsBtn = document.querySelector('.btn-primary');
+
+  // Skip the effect for reduced-motion users and touch-only devices (no hover)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  if (!projectsBtn || prefersReducedMotion || !canHover) return;
+
   let matrixCanvas;
   let matrixCtx;
   let matrixAnimation;
@@ -11,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Create canvas for matrix effect
   function createMatrixCanvas() {
-    console.log("Creating matrix canvas");
     matrixCanvas = document.createElement('canvas');
     matrixCanvas.classList.add('matrix-effect');
     document.body.appendChild(matrixCanvas);
@@ -33,13 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     matrixCanvas.style.top = `${rect.top - padding}px`;
     matrixCanvas.style.zIndex = '5'; // Lower z-index to keep it in the background
     matrixCanvas.style.pointerEvents = 'none';
-    
-    console.log(`Canvas positioned at ${matrixCanvas.style.left}, ${matrixCanvas.style.top} with dimensions ${matrixCanvas.width}x${matrixCanvas.height}`);
   }
   
   // Matrix rain animation
   function drawMatrix() {
-    console.log("Starting matrix animation");
     // Create an array for drops - one per column
     const fontSize = 14; // Smaller font size for subtlety
     const columnWidth = 18; // Increased column width for less density
@@ -142,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Start the matrix effect
   function startMatrixEffect() {
-    console.log("Starting matrix effect");
     if (!matrixCanvas) {
       createMatrixCanvas();
     }
@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Stop the matrix effect
   function stopMatrixEffect() {
-    console.log("Stopping matrix effect");
     if (matrixAnimation) {
       cancelAnimationFrame(matrixAnimation);
       isCanvasActive = false;
@@ -189,13 +188,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Add event listeners to button
-  if (projectsBtn) {
-    console.log("Adding event listeners to button");
-    projectsBtn.addEventListener('mouseenter', startMatrixEffect);
-    projectsBtn.addEventListener('mouseleave', stopMatrixEffect);
-    projectsBtn.addEventListener('focus', startMatrixEffect);
-    projectsBtn.addEventListener('blur', stopMatrixEffect);
-  } else {
-    console.error("Project button not found!");
-  }
+  projectsBtn.addEventListener('mouseenter', startMatrixEffect);
+  projectsBtn.addEventListener('mouseleave', stopMatrixEffect);
+  projectsBtn.addEventListener('focus', startMatrixEffect);
+  projectsBtn.addEventListener('blur', stopMatrixEffect);
 });

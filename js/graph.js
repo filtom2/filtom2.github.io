@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
-    const particleCount = 80;
+    const maxParticles = 80;
+    const areaPerParticle = 14000; // px² per particle, keeps density similar across screen sizes
     const connectionDistance = 150;
     const mouseRadius = 150;
     const particleRadius = 2;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     // Mouse position
     const mouse = {
@@ -21,16 +23,40 @@ document.addEventListener('DOMContentLoaded', function() {
       mouse.x = event.clientX - rect.left;
       mouse.y = event.clientY - rect.top;
     });
+
+    document.addEventListener('mouseleave', function() {
+      mouse.x = null;
+      mouse.y = null;
+    });
   
     // Handle window resize
     function resizeCanvas() {
       width = canvas.width = canvas.offsetWidth;
       height = canvas.height = canvas.offsetHeight;
     }
+
+    // Fewer particles on small screens = far fewer connection checks on phones
+    function targetParticleCount() {
+      return Math.max(20, Math.min(maxParticles, Math.round((width * height) / areaPerParticle)));
+    }
   
+    let lastWidth = 0;
     window.addEventListener('resize', function() {
       resizeCanvas();
-      initParticles();
+
+      // Mobile browsers fire resize when the URL bar shows/hides (height-only change).
+      // Only rebuild on real width changes so the animation doesn't reset while scrolling.
+      if (Math.abs(width - lastWidth) > 50) {
+        lastWidth = width;
+        initParticles();
+      } else {
+        particles.forEach(p => {
+          p.x = Math.min(p.x, width - p.radius);
+          p.y = Math.min(p.y, height - p.radius);
+        });
+      }
+
+      if (prefersReducedMotion) renderFrame(false);
     });
   
     // Create a particle
@@ -51,18 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fill();
       }
   
-      update() {
-        // Bounce off edges
-        if (this.x + this.radius > width || this.x - this.radius < 0) {
-          this.vx = -this.vx;
+      update(move = true) {
+        if (move) {
+          // Bounce off edges
+          if (this.x + this.radius > width || this.x - this.radius < 0) {
+            this.vx = -this.vx;
+          }
+          if (this.y + this.radius > height || this.y - this.radius < 0) {
+            this.vy = -this.vy;
+          }
+    
+          // Move particles
+          this.x += this.vx;
+          this.y += this.vy;
         }
-        if (this.y + this.radius > height || this.y - this.radius < 0) {
-          this.vy = -this.vy;
-        }
-  
-        // Move particles
-        this.x += this.vx;
-        this.y += this.vy;
   
         // Draw particle
         this.draw();
@@ -72,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize particles
     function initParticles() {
       particles = [];
-      for (let i = 0; i < particleCount; i++) {
+      const count = targetParticleCount();
+      for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
     }
@@ -98,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
   
         // Connect to mouse position if close enough
-        if (mouse.x && mouse.y) {
+        if (!prefersReducedMotion && mouse.x !== null && mouse.y !== null) {
           const dx = particles[i].x - mouse.x;
           const dy = particles[i].y - mouse.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
@@ -117,20 +146,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-    // Animation loop
-    function animate() {
-      requestAnimationFrame(animate);
+    function renderFrame(move = true) {
       ctx.clearRect(0, 0, width, height);
   
       particles.forEach(particle => {
-        particle.update();
+        particle.update(move);
       });
   
       connectParticles();
     }
+
+    // Animation loop
+    function animate() {
+      renderFrame();
+      requestAnimationFrame(animate);
+    }
   
     // Start the animation
     resizeCanvas();
+    lastWidth = width;
     initParticles();
-    animate();
+
+    if (prefersReducedMotion) {
+      // Static constellation, no movement or mouse-follow
+      mouse.x = mouse.y = null;
+      renderFrame(false);
+    } else {
+      animate();
+    }
   });

@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("Ripple button script loaded");
   const aboutBtn = document.querySelector('.btn-outline');
+
+  // Skip the effect for reduced-motion users and touch-only devices (no hover)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  if (!aboutBtn || prefersReducedMotion || !canHover) return;
+
   let rippleCanvas;
   let rippleCtx;
   let rippleAnimation;
@@ -8,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Create canvas for ripple effect
   function createRippleCanvas() {
-    console.log("Creating ripple canvas");
     rippleCanvas = document.createElement('canvas');
     rippleCanvas.classList.add('ripple-effect');
     document.body.appendChild(rippleCanvas);
@@ -32,14 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     rippleCanvas.style.zIndex = '5';
     rippleCanvas.style.pointerEvents = 'none';
     rippleCanvas.style.transition = 'opacity 0.8s ease'; // Slower transition for smoother fade
-    
-    console.log(`Ripple canvas positioned at ${rippleCanvas.style.left}, ${rippleCanvas.style.top} with dimensions ${rippleCanvas.width}x${rippleCanvas.height}`);
   }
   
   // Ripple animation
   function drawRipples() {
-    console.log("Starting ripple animation");
-    
     // Enhanced ripple configuration
     let ripples = [];
     const maxRipples = 12; // More ripples for a fuller effect
@@ -227,7 +227,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Start the ripple effect with a subtle fade-in
   function startRippleEffect() {
-    console.log("Starting ripple effect");
     if (!rippleCanvas) {
       createRippleCanvas();
       // Initial state is transparent
@@ -258,8 +257,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Stop the ripple effect with a smooth fade-out
   function stopRippleEffect() {
-    console.log("Stopping ripple effect");
-    
     // Fade out animation for smooth transition
     if (rippleCanvas) {
       rippleCanvas.style.opacity = '0';
@@ -295,13 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Add event listeners to button
-  if (aboutBtn) {
-    console.log("Adding event listeners to about button");
-    aboutBtn.addEventListener('mouseenter', startRippleEffect);
-    aboutBtn.addEventListener('mouseleave', stopRippleEffect);
-    aboutBtn.addEventListener('focus', startRippleEffect);
-    aboutBtn.addEventListener('blur', stopRippleEffect);
-  } else {
-    console.error("About button not found!");
-  }
+  aboutBtn.addEventListener('mouseenter', startRippleEffect);
+  aboutBtn.addEventListener('mouseleave', stopRippleEffect);
+  aboutBtn.addEventListener('focus', startRippleEffect);
+  aboutBtn.addEventListener('blur', stopRippleEffect);
 });

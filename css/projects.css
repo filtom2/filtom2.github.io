@@ -359,3 +359,13 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
   }
 }
+
+/* Private repository indicator (no public link) */
+.card-private {
+  cursor: help;
+  opacity: 0.7;
+}
+
+.card-private:hover {
+  color: var(--color-text-light);
+}

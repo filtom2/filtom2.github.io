@@ -4,25 +4,33 @@
   <meta charset="UTF-8">
   <title>Milan Šeliga | Computer Science Student</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Changed to JetBrains Mono font -->
+  <meta name="description" content="Portfolio of Milan Šeliga, a computer science student working on programming, data science, AI and networking projects.">
+  <meta name="author" content="Milan Šeliga">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://filtom2.github.io/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Milan Šeliga">
+  <meta property="og:title" content="Milan Šeliga | Computer Science Student">
+  <meta property="og:description" content="Projects and experiments in programming, data science, AI and networking.">
+  <meta property="og:url" content="https://filtom2.github.io/">
+  <meta property="og:image" content="https://filtom2.github.io/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Inline script to verify JavaScript is running -->
-  <script>
-    console.log("Inline script running, page is loading");
-    window.addEventListener('DOMContentLoaded', function() {
-      console.log("DOM fully loaded");
-    });
-  </script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="home-page">
-  <!-- Navbar has been removed -->
-
-  <div class="fullscreen-hero">
-    <!-- Canvas without debug border -->
-    <canvas id="graph-background"></canvas>
+  <main class="fullscreen-hero">
+    <canvas id="graph-background" aria-hidden="true"></canvas>
     <div class="hero-center-content">
       <div class="animated-text-container">
         <span class="hero-intro">Hello, I am</span>
@@ -35,40 +43,40 @@
         <a href="projects.html" class="btn btn-primary">View Projects</a>
         <a href="about.html" class="btn btn-outline">About Me</a>
       </div>
-      <div class="hero-indicators">
-        <div class="indicator">
-          <i class="fas fa-code"></i>
+      <ul class="hero-indicators" aria-label="Areas of interest">
+        <li class="indicator">
+          <i class="fas fa-code" aria-hidden="true"></i>
           <span>Programming</span>
-        </div>
-        <div class="indicator">
-          <i class="fas fa-database"></i>
+        </li>
+        <li class="indicator">
+          <i class="fas fa-database" aria-hidden="true"></i>
           <span>Data Science</span>
-        </div>
-        <div class="indicator">
-          <i class="fas fa-robot"></i>
+        </li>
+        <li class="indicator">
+          <i class="fas fa-robot" aria-hidden="true"></i>
           <span>AI</span>
-        </div>
-        <div class="indicator">
-          <i class="fas fa-network-wired"></i>
+        </li>
+        <li class="indicator">
+          <i class="fas fa-network-wired" aria-hidden="true"></i>
           <span>Networking</span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-  </div>
+  </main>
 
   <footer class="minimal-footer home-footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-info">
           <div class="footer-contact">
-            <a href="https://github.com/filtom2" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/filtom2" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
             <div class="footer-stack">
               <a href="mailto:milanoseptuno@gmail.com" class="footer-text">milanoseptuno@gmail.com</a>
               <span class="footer-text">Milan Šeliga</span>
             </div>
           </div>
         </div>
-        <p class="copyright">&copy; 2025</p>
+        <p class="copyright">&copy; <span data-year>2026</span></p>
         <div class="footer-links">
           <a href="about.html" class="nav-link">About</a>
           <a href="projects.html" class="nav-link">Projects</a>
@@ -76,8 +84,8 @@
       </div>
     </div>
   </footer>
-  
-  <!-- Make sure the script path is correct -->
+
+  <script src="js/site.js"></script>
   <script src="js/graph.js"></script>
   <!-- Matrix effect for button -->
   <script src="js/matrix-button.js"></script>
