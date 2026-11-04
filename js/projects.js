@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (category === 'all' || categories.includes(category)) {
           // Show card with animation
-          card.style.display = 'block';
+          card.style.display = '';
           card.style.animation = 'fadeInUp 0.5s forwards';
           
           // Random delay for matrix effect
